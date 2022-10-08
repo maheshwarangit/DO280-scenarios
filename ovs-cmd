@@ -1,0 +1,6 @@
+    1  ovs-vsctl 
+    2  ovs-vsctl show
+    3  172.30.9.152:8080
+    4  curl 172.30.9.152:8080
+    5  history 
+    6  history > ovs-cmd 

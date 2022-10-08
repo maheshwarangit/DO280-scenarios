@@ -1,0 +1,88 @@
+    1  clear
+    2  exit
+    3  oc get service
+    4  oc rsh client-ff7565757-gn952 
+    5  ssh root@utility
+    6  watch oc get pods -o wide
+    7  ssh lab@utility
+    8  lab install-troubleshoot start
+    9  cat /usr/local/etc/ocp4.config 
+   10  oc login -u kubeadmin -p WdBz8-mLKk9-yVN75-UhaiU
+   11  kubectl get pods
+   12  kubectl get nodes
+   13  oc new-project mydemo1
+   14  kubectl get-context
+   15  oc get-context
+   16  oc config get-contexts 
+   17  kubectl config get-contexts 
+   18  oc project default
+   19  vim .kube/config 
+   20  kubectl config --help
+   21  oc get pods -n openshift-sdn n
+   22  oc get pods -n openshift-sdn
+   23  oc get pods -n openshift-ovirt-infra 
+   24  oc get pods -n openshift-network-operator 
+   25  oc get pods -n openshift-dns
+   26  oc get nodes
+   27  oc get pods -o wide -n openshift-kube-apiserver
+   28  oc project
+   29  oc project mydemo1
+   30  oc create deployment --help
+   31  oc explain deployment
+   32  oc new-app --name=api --image=quay.io/mr_k_mahesh/nodejs
+   33  oc project
+   34  oc new-app --name=client --image=quay.io/redhattraining/hello-world-nginx
+   35  oc describe pod client-ff7565757-gn952 
+   36  oc new-app --name=api2 --image=quay.io/redhattraining/scaling
+   37  oc delete all -l app=api
+   38  oc describe pod api2-779f5b7b4d-c4559
+   39  oc edit deployment api2 
+   40  oc scale --replicas=2 deployment api2
+   41  oc get service
+   42  oc delete service api2 
+   43  oc get service
+   44  oc delete service client 
+   45  oc get service
+   46  oc get deployment
+   47  skopeo inspect docker://quay.io/redhattraining/scaling
+   48  oc get deployment
+   49  oc expose deployment api2 --port=8080
+   50  oc get service
+   51  oc get network cluster -o yaml
+   52  oc get service
+   53  oc explain service.spec.type
+   54  oc get service
+   55  curl 172.30.9.152:8080
+   56  oc describe service api2 
+   57  oc scale --replicas=3 deployment api2
+   58  oc describe service api2 
+   59  oc scale --replicas=2 deployment api2
+   60  oc describe service api2 
+   61  oc get service
+   62  oc get pods
+   63  oc rsh client-ff7565757-gn952 
+   64  oc get deployment
+   65  oc describe deployment api2 
+   66  oc describe pod api2-779f5b7b4d-c4559 | grep Labels
+   67  oc describe pod api2-779f5b7b4d-86cgg | grep Labels
+   68  #oc expose deployment api2 --port=8080
+   69  oc describe service api2 | grep Selector
+   70  oc describe service api2 | grep Endpoint
+   71  oc edit service api2 
+   72  oc describe service api2 | grep Selector
+   73  oc describe pod api2-779f5b7b4d-86cgg | grep Labels
+   74  oc describe service api2 | grep Endpoint
+   75  oc edit service api2 
+   76  oc describe service api2 | grep Endpoint
+   77  oc get pod -n openshift-ingress
+   78  oc get service
+   79  oc get dns -o yaml
+   80  oc get service
+   81  oc expose service api2 
+   82  oc get route
+   83  oc describe pod router-default-699bc7764c-4fhtc -n openshift-ingress
+   84  oc describe route api2 
+   85  curl api2-mydemo1.apps.ocp4.example.com
+   86  ping api2-mydemo1.apps.ocp4.example.com
+   87  history 
+   88  history > oc-abdul-workstation
